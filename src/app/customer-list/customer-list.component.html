@@ -1,0 +1,19 @@
+<table class="table table-sm table-hover">
+  <thead>
+    <th>Full Name</th>
+    <th>Email</th>
+    <th>Mobile</th>
+    <th></th>
+  </thead>
+  <ng-container *ngFor="let customer of customerArray">
+    <tr class="">
+      <td>{{customer.fullName}}</td>
+      <td>{{customer.email}}</td>
+      <td>{{customer.mobile}}</td>
+      <td>
+        <button class="btn btn-outline-info" style="margin:5px;" (click)="customerService.populateForm(customer)">Edit</button>
+        <button class="btn btn-outline-danger" style="margin:5px;" (click)="onDelete(customer.$key)">Delete</button>
+      </td>
+    </tr>
+  </ng-container>
+</table>
